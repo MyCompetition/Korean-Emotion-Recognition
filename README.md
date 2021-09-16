@@ -1,1 +1,42 @@
-# Korean-Emotion-Recognition
+# 제3회 한국인 감정인식 경진대회입니다.
+
+> ※중요 : 현재 저희가 드리는 데이터는 Validation 데이터로 Kaggle 리더보드에는 업로드가 불가능합니다. Validation 데이터를 본 메일로 보내주시면 저희가 점수를 매겨드립니다. 차후 Test 데이터의 경우에는 Validation 데이터를 보내주신 팀에 한해서 보내드릴 예정이오니 참고 부탁드립니다. ※
+```
+1. submission 제출 안내
+
+현재 2021KERC Kaggle에서 제공된 Validation data를 이용한 submission.csv 파일을 본 메일 주소(kerc2021.kr@gmail.com)로 제출해 주시길 바랍니다.
+    
+submission.csv(Validation data용)을 본 메일로 제출한 참가자에게만 10월 1일에 전체 Test data(522개)를 전달할 예정입니다. 10월에 제공될 Test data는 이번에 제공된 Validation data(234개)와 test data(288개)로 구성됩니다. 최종 심사는 Test data를 기반한 submission.csv로 이루어집니다.
+
+
+
+3. 최종 평가 기준
+
+대회 평가 기준은 F1 score 입니다.
+F1 점수는 다음과 같이 부여됩니다.
+
+F1 Score = 2 * (Precision * Recall) / (Precision + Recall)
+
+where Precision = True Positives / True Positives + False Positives,
+Recall = True Positives / True Positives + False Negatives
+
+자세한 평가 기준은 Kaggle 리더보드를 참고해주시길 바랍니다.
+
+
+4. 최종 제출 방법 (Test data)
+
+Maximum Daily Submissions는 하루 3번 제출이 가능하며, Public LeaderBoard에서 실시간으로 순위를 확인할 수 있습니다. 최종 답안은 참가자가 제출한 Submissions 중 5개를 선택하여 Scored Private Submissions로 제출됩니다. 시상은 참가자가 최종 LeaderBoard 업로드한 선택한 데이터(5개)로 평가됩니다. 최종 심사에서는 모든 비디오의 라벨 (522개)를 예측해야 하며, 최종 수상자는 Kaggle 대회 성격상 Public LeaderBoard의 순위와 달라질 수 있습니다.
+
+경진대회의 마감일은 대한민국 기준으로 10월 31일 11시 59분 입니다.
+
+
+5. 데이터 제공 및 주요 일정
+
+접수 기간 : 2021년 7월 19일 ~ 10월 15일(수시접수)
+Train, Val 데이터 제공 : 2021년 8월 30일(보안서약서 제출 완료한 팀 또는 개인)
+Test 데이터 제공 : 미정(빠른시일 내에 제공 예정, Val submission 이메일 제출 완료한 팀 또는 개인)
+최종 결과물 제출 : 2021년 10월 31일까지
+시상식 : 2021년 11월 12일 (금), 광주 김대중컨벤션센터
+
+*위의 일정은 내부 사정으로 변경될 수도 있음을 안내드립니다.
+```
