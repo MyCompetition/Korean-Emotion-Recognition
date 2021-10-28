@@ -98,6 +98,7 @@ def preprocess(input_dir, data_type):
 
 
 def main(argv):
+    '''
     input_dir = ''
     data_type = ''
     try:
@@ -118,8 +119,9 @@ def main(argv):
             input_dir = arg
         elif opt in ("-t", "--type"):
             data_type = arg
+    '''
 
-    preprocess(input_dir, data_type)
+    preprocess('D:\googleDrive\Korean-Emotion-Recognition\KERC21Dataset\KERC21Dataset', 'val')
 
 
 if __name__ == "__main__":
