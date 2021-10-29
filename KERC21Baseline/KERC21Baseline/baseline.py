@@ -31,7 +31,7 @@ class Baseline():
         self.model_path = f'logs/saved_model/saved_model_{int(time.time())}.pt'
 
     def train(self):
-        train_dataset = DatasetKERC21(dataset_dir=self.train_config['dataset_dir'], data_type='train')
+        train_dataset = DatasetKERC21(dataset_dir=self.train_config['dataset_dir'], data_type='train_set')
         train_dataloader = DataLoader(train_dataset, batch_size=self.train_config['batch_size'], shuffle=False)
 
         model = BaselineModel(self.train_config).to(self.device)

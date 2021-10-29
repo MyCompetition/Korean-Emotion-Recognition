@@ -20,14 +20,14 @@ class DatasetKERC21(Dataset):
         """
         if dataset_dir in [None, 'Datadir here']:
             raise ValueError('Please provide the dataset path. Please set the path in config.ini')  
-        data_type = 'val'
+        data_type = 'train'
         self.data_type = data_type
         self.dataset_dir = dataset_dir
-        self.sample_ids  = [file[:file.index('_')] for file in os.listdir(f'{dataset_dir}/{data_type}') if 'EEG' in file]
+        self.sample_ids  = [file[:file.index('_')] for file in os.listdir(f'{dataset_dir}/{self.data_type}') if 'EEG' in file]
         self.quadrants = ['HAHV','HALV','LALV','LAHV'] # four quadrants in arousal, valence space
-        self.personality_traits = pd.read_csv(f"{dataset_dir}/{data_type}_personality.csv")
+        self.personality_traits = pd.read_csv(f"{dataset_dir}/{self.data_type}_personality.csv")
         try:
-            self.labels = pd.read_csv(f"{dataset_dir}/{data_type}_labels.csv")
+            self.labels = pd.read_csv(f"{dataset_dir}/{self.data_type}_labels.csv")
         except FileNotFoundError: # val and test labels may not be available
             pass
         self.len = len(self.sample_ids)
