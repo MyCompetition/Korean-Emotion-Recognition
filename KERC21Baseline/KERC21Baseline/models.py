@@ -11,19 +11,15 @@ class BaselineModel(nn.Module):
 
         self.lstm = nn.LSTM(self.lstm_input_dim, self.hidden_dim, self.num_layers)
 
-        self.personality_embedding = nn.Embedding(train_config['size_personality'],
-                                                  train_config['cat_personality'])  # 4 categories
+        self.personality_embedding = nn.Embedding(train_config['size_personality'], train_config['cat_personality'])  # 4 categories
         personality_embedd_size = train_config['size_personality'] * train_config['cat_personality']
 
-        fusion_dim = train_config['lstm_hidden_dim'] + train_config['size_eda'] + train_config[
-            'size_bvp'] + personality_embedd_size
+        fusion_dim = train_config['lstm_hidden_dim'] + train_config['size_eda'] + train_config['size_bvp'] + personality_embedd_size
         self.clf = nn.Sequential(
             nn.Linear(fusion_dim, 256),
             nn.ReLU(),
             nn.BatchNorm1d(256),
-            nn.Linear(256, 128),
-            nn.ReLU(),
-            nn.Linear(128, train_config['clf_out']),
+            nn.Linear(256, train_config['clf_out']),
             nn.Sigmoid())
 
     def init_lstm_hidden(self, batch_size):
