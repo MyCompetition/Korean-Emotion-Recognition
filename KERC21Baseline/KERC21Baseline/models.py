@@ -19,7 +19,9 @@ class BaselineModel(nn.Module):
             nn.Linear(fusion_dim, 256),
             nn.ReLU(),
             nn.BatchNorm1d(256),
-            nn.Linear(256, train_config['clf_out']),
+            nn.Linear(256, 128),
+            nn.ReLU(),
+            nn.Linear(128, train_config['clf_out']),
             nn.Sigmoid())
 
     def init_lstm_hidden(self, batch_size):
